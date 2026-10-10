@@ -28,7 +28,7 @@ FormIDs: `help GMD_ 4` in the console lists this mod's records with their load-o
 ## Stages
 
 - [ ] Reading the note → stage 20; the objective names a dungeon in Whiterun/Falkreath/Hjaalmarch/Pale/Eastmarch, with a map marker on Brund.
-- [ ] Brund Coal-Hand is at the dungeon's boss spot (entrance if none), hostile. Papyrus log shows 'GMD_ Brund moved' or 'GMD_ no boss spot'. Looting him gives the pattern and Hrodulf's Letter → stage 30. Two objectives: return to Eorlund, (optional) sell to Hrodulf.
+- [ ] Brund Coal-Hand is at the dungeon's boss spot (entrance if none), hostile. Papyrus log shows 'GMD_ Brund moved' or 'GMD_ no boss spot'. Looting him gives the pattern and Hrodulf's Letter → stage 30. (0.1.2: if the pattern is missing, taking the letter alone gives it to you → stage 30; or ask Eorlund "Brund didn't have the pattern".) Two objectives: return to Eorlund, (optional) sell to Hrodulf.
 - [ ] Hrodulf and two enforcers now stand at the Whiterun Stables, not hostile.
 - [ ] The pattern can't be dropped (quest item).
 - [ ] Eorlund: "About the stolen pattern..." gives a status line at stages 10, 20 and 40.

@@ -40,6 +40,8 @@ internal static class Texts
     public static readonly string[] StatusThief = { "So the thief went to ground at <Alias=ThiefLocation>. Go carefully. Desperate men bite." };
     public static readonly string[] StatusDebt = { "Hrodulf waits by the stables like a crow on a fence post. Pay him or put him down. Either way, end it." };
 
+    public const string TopicRecover = "Brund didn't have the pattern. Just this letter.";
+    public static readonly string[] Recover = { "Let me see that. Hm. Wrapped in the letter's fold, there. He must have hidden it. Take it, and bring it back to me." };
     public const string TopicReturn = "I recovered your pattern.";
     public static readonly string[] Return =
     {

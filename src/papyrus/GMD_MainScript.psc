@@ -81,6 +81,42 @@ Function EnsurePattern()
 	EndIf
 EndFunction
 
+; 0.1.2: Letter alias - the player took Hrodulf's letter. If Brund is dead (or gone) and the
+; pattern is not on him, hand the pattern to the player so the quest can't stall.
+Function LetterTaken()
+	Int st = GetStage()
+	If st < 10 || st >= 30
+		Return
+	EndIf
+	Actor b = Thief.GetReference() as Actor
+	If b && b.GetItemCount(GMD_PatternItem) > 0
+		Return ; still on him (or his corpse): the player can loot it
+	EndIf
+	GivePatternToPlayer()
+EndFunction
+
+; 0.1.2: Eorlund's "Brund didn't have the pattern" dialogue, and LetterTaken.
+Function GivePatternToPlayer()
+	Int st = GetStage()
+	If st < 10 || st >= 30
+		Return
+	EndIf
+	Actor player = Game.GetPlayer()
+	If !GMD_PatternItem && Pattern.GetReference()
+		GMD_PatternItem = Pattern.GetReference().GetBaseObject() as MiscObject
+	EndIf
+	If player.GetItemCount(GMD_PatternItem) == 0
+		ObjectReference n = Pattern.GetReference()
+		If !n
+			n = player.PlaceAtMe(GMD_PatternItem, 1, True)
+			Pattern.ForceRefTo(n)
+		EndIf
+		player.AddItem(n, 1)
+		Debug.Trace("GMD_ GivePatternToPlayer: pattern given to the player")
+	EndIf
+	PatternTaken()
+EndFunction
+
 ; Ticket alias: the player read the soot-stained note.
 Function TicketRead()
 	If GetStage() >= 10 && GetStage() < 20

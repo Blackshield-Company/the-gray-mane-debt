@@ -4,7 +4,7 @@ Game: Skyrim Special Edition
 
 Mod name: The Gray-Mane Debt
 
-Version: 0.1.1 (early beta)
+Version: 0.1.2 (early beta)
 
 Category: Quests and Adventures
 
@@ -12,9 +12,9 @@ Short summary (237 chars):
 A short questline for Eorlund Gray-Mane. A thief stole the Skyforge's tempering pattern; the trail leads to a dangerous creditor. Pay the debt, fight, or betray Eorlund. Unvoiced (silent voice files). Base game, ESL, no SKSE. Early beta.
 
 Main file:
-- File: GrayManeDebt-0.1.1.zip (FOMOD installer)
+- File: GrayManeDebt-0.1.2.zip (FOMOD installer)
 - File name: The Gray-Mane Debt
-- File version: 0.1.1
+- File version: 0.1.2
 - File category: Main Files
 - File description: Early beta. FOMOD installer with GrayManeDebt.esp (ESL-flagged), compiled scripts, SEQ file, silent voice files for the unvoiced dialogue, and optional Papyrus sources. Requires only Skyrim Special Edition / Anniversary Edition (1.5.97 or 1.6.x).
 

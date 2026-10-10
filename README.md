@@ -2,7 +2,7 @@
 
 A short Skyrim Special Edition questline for **Eorlund Gray-Mane**, the smith at the Skyforge. A thief has stolen the notched ivory pattern every Skyforge blade is folded by, and the trail leads to a debt Eorlund would rather not talk about. Find the thief, face the moneylender, and decide whether the Gray-Mane debt is settled with coin, with steel, or by selling Eorlund out.
 
-**Status: v0.1.1, early beta.** It passes every automated check in the build (Papyrus compile, plugin and dialogue validation, byte-exact round trip, voice file and SEQ checks, FOMOD schema) but has not been playtested in-game yet. Expect rough edges and please report what you find. See [docs/TESTING.md](docs/TESTING.md).
+**Status: v0.1.2, early beta.** It passes every automated check in the build (Papyrus compile, plugin and dialogue validation, byte-exact round trip, voice file and SEQ checks, FOMOD schema) but has not been playtested in-game yet. Expect rough edges and please report what you find. See [docs/TESTING.md](docs/TESTING.md).
 
 - Game: Skyrim Special Edition / Anniversary Edition 1.6.x (also fine on 1.5.97). Works on Windows and on Linux through Proton.
 - Requirements: none beyond the base game. No SKSE, no SkyUI, no DLC, no Creation Club content.

@@ -214,6 +214,7 @@ internal sealed class Builder
                 Vmad.Alias("Thief", qMain, AThief), Vmad.Alias("ThiefBoss", qMain, AThiefBoss), Vmad.Alias("Letter", qMain, ALetter),
                 Vmad.Obj("GMD_PatternItem", pattern.FormKey), Vmad.Obj("GMD_LetterItem", letter.FormKey)))
             .WithAliasScripts(qMain, AThief, Vmad.Script("GMD_ThiefAliasScript"))
+            .WithAliasScripts(qMain, ALetter, Vmad.Script("GMD_LetterAliasScript"))
             .WithAliasScripts(qMain, AEorlund, Vmad.Script("GMD_EorlundAliasScript"))
             .WithAliasScripts(qMain, ACreditor, Vmad.Script("GMD_CreditorAliasScript"))
             .WithAliasScripts(qMain, APattern, Vmad.Script("GMD_PatternAliasScript"))
@@ -253,6 +254,14 @@ internal sealed class Builder
         Info(tStatus, "GMD_E_StatusNote", Texts.StatusNote, new[] { isEorlund, StageIs(CompareOperator.GreaterThanOrEqualTo, 10), StageIs(CompareOperator.LessThan, 20) });
         Info(tStatus, "GMD_E_StatusThief", Texts.StatusThief, new[] { isEorlund, StageIs(CompareOperator.GreaterThanOrEqualTo, 20), StageIs(CompareOperator.LessThan, 30) });
         Info(tStatus, "GMD_E_StatusDebt", Texts.StatusDebt, new[] { isEorlund, StageIs(CompareOperator.EqualTo, 40) });
+
+        // 0.1.2: recovery for saves where Brund never had the pattern (works on 0.1.0/0.1.1 saves too).
+        var bRecover = Id("GMD_RecoverBranch");
+        var tRecover = Topic("GMD_E_Recover", qMain, bRecover, Texts.TopicRecover, eorlund);
+        Branch(bRecover, "GMD_RecoverBranch", qMain, tRecover);
+        var hasLetter = Cond.ItemCount(letter.FormKey, CompareOperator.GreaterThanOrEqualTo, 1).OnRef(PlayerRef);
+        var noPattern = Cond.ItemCount(pattern.FormKey, CompareOperator.LessThan, 1).OnRef(PlayerRef);
+        Info(tRecover, "GMD_E_RecoverInfo", Texts.Recover, new[] { isEorlund, StageIs(CompareOperator.GreaterThanOrEqualTo, 10), StageIs(CompareOperator.LessThan, 30), hasLetter, noPattern }, goodbye: true, fragment: "GMD_TIF_RecoverPattern");
 
         var bReturn = Id("GMD_ReturnBranch");
         var tReturn = Topic("GMD_E_Return", qMain, bReturn, Texts.TopicReturn, eorlund);

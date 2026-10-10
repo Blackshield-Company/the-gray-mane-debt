@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2026-10-10
+
+Still early beta, not yet playtested in game.
+
+### Fixed
+- The quest could stall at "Recover the Skyforge pattern" when Brund only had Hrodulf's letter. Only picking up the pattern advanced the quest, so the marker stayed on his body. Now, taking the letter while the pattern is not on Brund gives you the pattern and moves the quest on.
+- Fix for saves already stuck (including 0.1.0 and 0.1.1 saves): with the letter in your inventory, ask Eorlund "Brund didn't have the pattern. Just this letter." He hands you the pattern and the quest continues.
+
 ## [0.1.1] - 2026-10-10
 
 Still early beta, not yet playtested in game.
