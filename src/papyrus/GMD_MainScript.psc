@@ -16,13 +16,69 @@ MiscObject Property Gold001 Auto
 Weapon Property GMD_HeirloomBlade Auto
 Faction Property GMD_CreditorFaction Auto
 Faction Property PlayerFaction Auto
+ReferenceAlias Property Thief Auto
+ReferenceAlias Property ThiefBoss Auto
+{Optional: the dungeon's boss spot. Brund is moved there at quest start.}
+ReferenceAlias Property Letter Auto
+MiscObject Property GMD_PatternItem Auto
+Book Property GMD_LetterItem Auto
 
 Bool PendingDismiss = False
 Bool PendingStop = False
 
 Function Begin()
 	SetStage(10)
+	PlaceThief()
+	EnsurePattern()
 	SetObjectiveDisplayed(10)
+EndFunction
+
+; 0.1.1: Brund was created at the dungeon's outdoor map marker.
+Function PlaceThief()
+	Actor b = Thief.GetReference() as Actor
+	ObjectReference spot = ThiefBoss.GetReference()
+	If b && spot
+		b.MoveTo(spot)
+		Debug.Trace("GMD_ Brund moved to the dungeon's boss spot")
+	ElseIf b
+		Debug.Trace("GMD_ no boss spot in this dungeon; Brund stays at the map marker")
+	EndIf
+EndFunction
+
+; 0.1.1: make sure Brund carries the pattern and the letter (alias-created items could go missing).
+; Called at quest start, when he loads, and when he dies. Safe to call any number of times.
+Function EnsurePattern()
+	Int st = GetStage()
+	If st < 10 || st >= 30
+		Return
+	EndIf
+	Actor player = Game.GetPlayer()
+	If player.GetItemCount(GMD_PatternItem) > 0
+		PatternTaken()
+		Return
+	EndIf
+	Actor b = Thief.GetReference() as Actor
+	If !b
+		Debug.Trace("GMD_ EnsurePattern: no thief")
+		Return
+	EndIf
+	If b.GetItemCount(GMD_PatternItem) == 0
+		ObjectReference n = Pattern.GetReference()
+		If !n
+			n = b.PlaceAtMe(GMD_PatternItem, 1, True)
+			Pattern.ForceRefTo(n)
+		EndIf
+		b.AddItem(n, 1, True)
+		Debug.Trace("GMD_ EnsurePattern: pattern given to Brund")
+	EndIf
+	If b.GetItemCount(GMD_LetterItem) == 0 && player.GetItemCount(GMD_LetterItem) == 0
+		ObjectReference l = Letter.GetReference()
+		If !l
+			l = b.PlaceAtMe(GMD_LetterItem, 1, True)
+			Letter.ForceRefTo(l)
+		EndIf
+		b.AddItem(l, 1, True)
+	EndIf
 EndFunction
 
 ; Ticket alias: the player read the soot-stained note.

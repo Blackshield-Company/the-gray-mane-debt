@@ -1,17 +1,17 @@
 # Nexus Mods page: The Gray-Mane Debt
 
-Early beta: v0.1.0 passed every automated build check but hasn't been playtested in-game. The page says so up front. Exact upload-form values are in [NEXUS_FIELDS.md](NEXUS_FIELDS.md).
+Early beta: v0.1.1 passed every automated build check but hasn't been playtested in-game. The page says so up front. Exact upload-form values are in [NEXUS_FIELDS.md](NEXUS_FIELDS.md).
 
 ## Page settings
 
 - **Game:** Skyrim Special Edition
 - **Mod name:** The Gray-Mane Debt
-- **Version:** 0.1.0 (early beta)
+- **Version:** 0.1.1 (early beta)
 - **Category:** Quests and Adventures
 - **Suggested tags:** Quests, Lore-Friendly, Dialogue, Whiterun, Choices and Consequences, ESL, No SKSE, Scripted
 - **Requirements:** none.
 - **Permissions (suggested):** source on GitHub under MIT, so allow modification and conversions with credit. Don't allow re-uploads of the archive itself.
-- **File to upload:** `GrayManeDebt-0.1.0.zip` (FOMOD), main file, named "The Gray-Mane Debt".
+- **File to upload:** `GrayManeDebt-0.1.1.zip` (FOMOD), main file, named "The Gray-Mane Debt".
 
 ## Description (paste into the BBCode editor)
 
@@ -19,7 +19,7 @@ Early beta: v0.1.0 passed every automated build check but hasn't been playtested
 [center][size=6][b]THE GRAY-MANE DEBT[/b][/size]
 [size=3][i]Every Skyforge blade is folded by an old notched pattern. Someone stole it. Eorlund knows why.[/i][/size]
 
-[size=3][color=#e0a030][b]EARLY BETA (v0.1.0)[/b]: this version passes every automated build check but hasn't been playtested in-game yet. Please report bugs in the Bugs tab or on GitHub, ideally with your Papyrus log.[/color][/size][/center]
+[size=3][color=#e0a030][b]EARLY BETA (v0.1.1)[/b]: this version passes every automated build check but hasn't been playtested in-game yet. Please report bugs in the Bugs tab or on GitHub, ideally with your Papyrus log.[/color][/size][/center]
 
 [line]
 
@@ -96,7 +96,7 @@ Take these at 16:9, with the HUD hidden for scenery shots (`tm` in the console t
 1. **Hero shot.** Eorlund at the Skyforge with the eagle behind him. This goes on the mod tile.
 2. **The opening.** The topic list with "You look troubled, Eorlund." and his first subtitle.
 3. **The note.** The Soot-Stained Note open.
-4. **The hideout.** Brund Coal-Hand at a dungeon entrance.
+4. **The hideout.** Brund Coal-Hand deep in a dungeon (at its entrance if the dungeon has no boss spot).
 5. **The confession.** Eorlund's lines about the debt.
 6. **Hrodulf.** Hrodulf Ash-Purse and his enforcers at the Whiterun Stables, with the choice list.
 7. **The reward.** The Gray-Mane Heirloom in the inventory.

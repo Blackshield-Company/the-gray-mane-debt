@@ -44,6 +44,7 @@ internal static class Vanilla
     public static readonly FormKey EastmarchHoldLocation = K(0x01676A);
     public static readonly FormKey LocTypeDungeon = K(0x0130DB);
     public static readonly FormKey RefTypeMapMarker = K(0x10F63C);
+    public static readonly FormKey RefTypeBoss = K(0x0130F7);
 
     // Items, keywords, sounds, art
     public static readonly FormKey Gold001 = K(0x00000F);

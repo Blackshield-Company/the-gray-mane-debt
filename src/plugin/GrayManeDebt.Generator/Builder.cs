@@ -17,7 +17,7 @@ internal sealed class Builder
 
     // GMD_Main alias layout
     public const int APlayer = 0, AEorlund = 1, AThiefLocation = 2, AThiefMarker = 3, AThief = 4, APattern = 5,
-        ALetter = 6, ATicket = 7, AMeetingMarker = 8, ACreditor = 9, AThug1 = 10, AThug2 = 11;
+        ALetter = 6, ATicket = 7, AMeetingMarker = 8, ACreditor = 9, AThug1 = 10, AThug2 = 11, AThiefBoss = 12;
 
     public HashSet<string> ExpectedUnfilled { get; } = new();
 
@@ -196,6 +196,13 @@ internal sealed class Builder
         main.Aliases.Add(Created(ACreditor, "Creditor", creditor.FormKey, AMeetingMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.InitiallyDisabled | QuestAlias.Flag.StoresText));
         main.Aliases.Add(Created(AThug1, "Thug1", thug.FormKey, AMeetingMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.InitiallyDisabled | QuestAlias.Flag.Optional));
         main.Aliases.Add(Created(AThug2, "Thug2", thug.FormKey, AMeetingMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.InitiallyDisabled | QuestAlias.Flag.Optional));
+        // 0.1.1: the dungeon's own boss spot (optional). The script moves Brund there.
+        main.Aliases.Add(new QuestAlias
+        {
+            ID = AThiefBoss, Type = QuestAlias.TypeEnum.Reference, Name = "ThiefBoss",
+            Flags = QuestAlias.Flag.Optional | QuestAlias.Flag.AllowDead | QuestAlias.Flag.AllowDisabled,
+            Location = new LocationAliasReference { AliasID = AThiefLocation, RefType = L<ILocationReferenceTypeGetter>(RefTypeBoss).AsNullable() },
+        });
         main.NextAliasID = (uint)main.Aliases.Count;
 
         main.VirtualMachineAdapter = Vmad.QuestAdapter(Vmad.Script("GMD_MainScript",
@@ -203,7 +210,10 @@ internal sealed class Builder
                 Vmad.Alias("Creditor", qMain, ACreditor), Vmad.Alias("Thug1", qMain, AThug1), Vmad.Alias("Thug2", qMain, AThug2),
                 Vmad.Obj("GMD_State", gState), Vmad.Obj("GMD_DebtAmount", gDebt), Vmad.Obj("GMD_BetrayGold", gBetray),
                 Vmad.Obj("GMD_SmithingLessons", gLessons), Vmad.Obj("Gold001", Gold001), Vmad.Obj("GMD_HeirloomBlade", blade.FormKey),
-                Vmad.Obj("GMD_CreditorFaction", creditorFaction.FormKey), Vmad.Obj("PlayerFaction", PlayerFaction)))
+                Vmad.Obj("GMD_CreditorFaction", creditorFaction.FormKey), Vmad.Obj("PlayerFaction", PlayerFaction),
+                Vmad.Alias("Thief", qMain, AThief), Vmad.Alias("ThiefBoss", qMain, AThiefBoss), Vmad.Alias("Letter", qMain, ALetter),
+                Vmad.Obj("GMD_PatternItem", pattern.FormKey), Vmad.Obj("GMD_LetterItem", letter.FormKey)))
+            .WithAliasScripts(qMain, AThief, Vmad.Script("GMD_ThiefAliasScript"))
             .WithAliasScripts(qMain, AEorlund, Vmad.Script("GMD_EorlundAliasScript"))
             .WithAliasScripts(qMain, ACreditor, Vmad.Script("GMD_CreditorAliasScript"))
             .WithAliasScripts(qMain, APattern, Vmad.Script("GMD_PatternAliasScript"))

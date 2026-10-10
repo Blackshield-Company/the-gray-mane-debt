@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-10-10
+
+Still early beta, not yet playtested in game.
+
+### Fixed
+- The Skyforge pattern (and Hrodulf's letter) could be missing from Brund Coal-Hand. The quest now gives them to him by script when it starts, and checks again when he loads and when he dies, re-adding them if missing. If you already carry the pattern, the quest advances on the next check. Saves already looking for Brund get the fix the next time he loads.
+
+### Changed
+- Brund now waits at the dungeon's boss spot instead of the outdoor map marker. Dungeons without one keep the map marker.
+
 ## [0.1.0] - 2026-10-06
 
 Early beta. First public release. It passes every automated check in the build (Papyrus compile, plugin and dialogue validation, round trip, voice file and SEQ checks, FOMOD schema) but has not been playtested in-game yet. Please report problems on the Nexus page or on GitHub.

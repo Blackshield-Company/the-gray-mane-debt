@@ -2,7 +2,7 @@
 
 A short Skyrim Special Edition questline for **Eorlund Gray-Mane**, the smith at the Skyforge. A thief has stolen the notched ivory pattern every Skyforge blade is folded by, and the trail leads to a debt Eorlund would rather not talk about. Find the thief, face the moneylender, and decide whether the Gray-Mane debt is settled with coin, with steel, or by selling Eorlund out.
 
-**Status: v0.1.0, early beta.** It passes every automated check in the build (Papyrus compile, plugin and dialogue validation, byte-exact round trip, voice file and SEQ checks, FOMOD schema) but has not been playtested in-game yet. Expect rough edges and please report what you find. See [docs/TESTING.md](docs/TESTING.md).
+**Status: v0.1.1, early beta.** It passes every automated check in the build (Papyrus compile, plugin and dialogue validation, byte-exact round trip, voice file and SEQ checks, FOMOD schema) but has not been playtested in-game yet. Expect rough edges and please report what you find. See [docs/TESTING.md](docs/TESTING.md).
 
 - Game: Skyrim Special Edition / Anniversary Edition 1.6.x (also fine on 1.5.97). Works on Windows and on Linux through Proton.
 - Requirements: none beyond the base game. No SKSE, no SkyUI, no DLC, no Creation Club content.
@@ -12,7 +12,7 @@ A short Skyrim Special Edition questline for **Eorlund Gray-Mane**, the smith at
 ## The quest
 
 1. **"You look troubled, Eorlund."** Talk to Eorlund at the Skyforge (level 5+). He tells you someone broke in and took his grandfather's tempering pattern, and hands you a note the thief dropped.
-2. **The note** names a hideout: a dungeon in Whiterun, Falkreath, Hjaalmarch, the Pale or Eastmarch, picked when the quest starts. The thief, Brund Coal-Hand, waits at its entrance.
+2. **The note** names a hideout: a dungeon in Whiterun, Falkreath, Hjaalmarch, the Pale or Eastmarch, picked when the quest starts. The thief, Brund Coal-Hand, waits inside at the boss spot (or at its entrance if the dungeon has none).
 3. **The pattern** is on Brund, with a letter from the man who hired him: **Hrodulf Ash-Purse**, a moneylender now waiting at the Whiterun Stables with two enforcers.
 4. **Eorlund's confession**: bring the pattern home and he tells you about the debt.
 5. **The choice**, made in dialogue with Hrodulf:
