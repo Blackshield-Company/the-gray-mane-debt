@@ -191,7 +191,7 @@ internal sealed class Builder
         main.Aliases.Add(Created(AThief, "Thief", thief.FormKey, AThiefMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.StoresText));
         main.Aliases.Add(Created(APattern, "Pattern", pattern.FormKey, AThief, CreateReferenceToObject.CreateEnum.In, Level.Easy, QuestAlias.Flag.QuestObject));
         main.Aliases.Add(Created(ALetter, "Letter", letter.FormKey, AThief, CreateReferenceToObject.CreateEnum.In, Level.Easy, 0));
-        main.Aliases.Add(Created(ATicket, "Ticket", ticket.FormKey, APlayer, CreateReferenceToObject.CreateEnum.In, Level.Easy, QuestAlias.Flag.QuestObject));
+        main.Aliases.Add(Created(ATicket, "Ticket", ticket.FormKey, APlayer, CreateReferenceToObject.CreateEnum.In, Level.Easy, QuestAlias.Flag.QuestObject | QuestAlias.Flag.StoresText | QuestAlias.Flag.UsesStoredText));
         main.Aliases.Add(new QuestAlias { ID = AMeetingMarker, Type = QuestAlias.TypeEnum.Reference, Name = "MeetingMarker", ForcedReference = new FormLinkNullable<IPlacedGetter>(WhiterunStablesMapMarker) });
         main.Aliases.Add(Created(ACreditor, "Creditor", creditor.FormKey, AMeetingMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.InitiallyDisabled | QuestAlias.Flag.StoresText));
         main.Aliases.Add(Created(AThug1, "Thug1", thug.FormKey, AMeetingMarker, CreateReferenceToObject.CreateEnum.At, Level.Medium, QuestAlias.Flag.InitiallyDisabled | QuestAlias.Flag.Optional));
