@@ -1,3 +1,5 @@
+![the-gray-mane-debt](.github/preview.png)
+
 # The Gray-Mane Debt
 
 A short Skyrim Special Edition questline for **Eorlund Gray-Mane**, the smith at the Skyforge. A thief has stolen the notched ivory pattern every Skyforge blade is folded by, and the trail leads to a debt Eorlund would rather not talk about. Find the thief, face the moneylender, and decide whether the Gray-Mane debt is settled with coin, with steel, or by selling Eorlund out.
