@@ -35,4 +35,4 @@ Permissions (suggestion; code is MIT on GitHub):
 Tags (pick the closest matches in the tag picker):
 Quests, Lore-Friendly, Dialogue, Whiterun, Choices and Consequences, ESL, No SKSE, Scripted
 
-Source: https://github.com/synthalorian/the-gray-mane-debt
+Source: https://github.com/Blackshield-Company/the-gray-mane-debt
