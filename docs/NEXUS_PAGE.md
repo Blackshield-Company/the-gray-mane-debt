@@ -78,7 +78,7 @@ As with any scripted mod, don't remove it mid-playthrough. Finish or fail the qu
 [/list]
 
 [size=4][b]Source[/b][/size]
-Open source (MIT): [url=https://github.com/synthalorian/the-gray-mane-debt]github.com/synthalorian/the-gray-mane-debt[/url]
+Open source (MIT): [url=https://github.com/Blackshield-Company/the-gray-mane-debt]github.com/Blackshield-Company/the-gray-mane-debt[/url]
 
 [size=4][b]Credits[/b][/size]
 [list]

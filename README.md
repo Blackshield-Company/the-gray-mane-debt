@@ -9,7 +9,7 @@ A short Skyrim Special Edition questline for **Eorlund Gray-Mane**, the smith at
 - Game: Skyrim Special Edition / Anniversary Edition 1.6.x (also fine on 1.5.97). Works on Windows and on Linux through Proton.
 - Requirements: none beyond the base game. No SKSE, no SkyUI, no DLC, no Creation Club content.
 - Plugin: `GrayManeDebt.esp`, ESL-flagged, Skyrim.esm is the only master. **No vanilla records edited**: not Eorlund, not his AI, not his dialogue.
-- Compatible with the rest of the series ([Blackshield Company](https://github.com/synthalorian/blackshield-company), [Bounties of Oblivion](https://github.com/synthalorian/bounties-of-oblivion), [Contract Hunter](https://github.com/synthalorian/contract-hunter), [Steel Oath](https://github.com/synthalorian/steel-oath), [Ember Smithing](https://github.com/synthalorian/ember-smithing)): own prefix (`GMD_`), records, globals and files. Checked by loading all plugins together (see [tools/modkit](tools/modkit/README.md)).
+- Compatible with the rest of the series ([Blackshield Company](https://github.com/Blackshield-Company/blackshield-company), [Bounties of Oblivion](https://github.com/Blackshield-Company/bounties-of-oblivion), [Contract Hunter](https://github.com/Blackshield-Company/contract-hunter), [Steel Oath](https://github.com/Blackshield-Company/steel-oath), [Ember Smithing](https://github.com/Blackshield-Company/ember-smithing)): own prefix (`GMD_`), records, globals and files. Checked by loading all plugins together (see [tools/modkit](tools/modkit/README.md)).
 
 ## The quest
 
@@ -33,7 +33,7 @@ All 27 new lines (18 dialogue entries) are unvoiced, shown as subtitles. The eng
 
 ## Install
 
-Grab `GrayManeDebt-<version>.zip` from [Releases](https://github.com/synthalorian/the-gray-mane-debt/releases) (FOMOD installer).
+Grab `GrayManeDebt-<version>.zip` from [Releases](https://github.com/Blackshield-Company/the-gray-mane-debt/releases) (FOMOD installer).
 
 - **Mod Organizer 2**: *Install a new mod from an archive*, pick the zip, enable `GrayManeDebt.esp`.
 - **Vortex**: drag the zip into the Mods page, install and enable it.
